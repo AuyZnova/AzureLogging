@@ -1,3 +1,4 @@
+using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
@@ -24,7 +25,7 @@ namespace AzureLogging
                         .Enrich.WithProperty("Environment", "AuySpace")
                         .Enrich.WithProperty("Logger", "Serilog")
                         //.WriteTo.File(@"C:\logs\test\serilog.log")
-                        //.WriteTo.ApplicationInsights(new TelemetryConfiguration { InstrumentationKey = "0f08fccc-1618-409a-83d5-b4468fa4c21b" }, TelemetryConverter.Traces)
+                        .WriteTo.ApplicationInsights(new TelemetryConfiguration { InstrumentationKey = "9f152cde-ff7c-485f-b1a7-fcae937b3c62" }, TelemetryConverter.Traces)
                         //.WriteTo.File(
                         //    @"D:\home\LogFiles\Application\trace.log",
                         //    fileSizeLimitBytes: 5_000_000,
