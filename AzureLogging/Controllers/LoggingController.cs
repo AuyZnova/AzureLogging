@@ -2,6 +2,8 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace AzureLogging.Controllers
 {
@@ -20,7 +22,8 @@ namespace AzureLogging.Controllers
         [Route("Info")]
         public IActionResult Info()
         {
-            _logger.LogInformation("This is info log.");
+            _logger.LogInformation("ILogger: This is an info log.");
+            Log.Information("Serilog: This is an info log.");
 
             return Ok();
         }
@@ -35,7 +38,8 @@ namespace AzureLogging.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "This is error log.");
+                _logger.LogError(e, "ILogger: This is an error log.");
+                Log.Error(e, "Serilog: This is an error log.");
             }
 
             return Ok();
