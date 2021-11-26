@@ -26,7 +26,7 @@ namespace AzureLogging
                         .Enrich.WithProperty("ENV", "Test")
                         .Enrich.WithProperty("Logger", "Serilog")
                         .WriteTo.ApplicationInsights(new TelemetryConfiguration { InstrumentationKey = "b6bb24e4-9e6f-44e9-8ca4-b15ec94bae7c" }, TelemetryConverter.Traces)
-                        .WriteTo.LogzIoDurableHttp("https://listener-au.logz.io:8071/?type=app&token=iQammjGcvLYWyrlenMTyNMStqBrRwvlw",
+                        .WriteTo.LogzIoDurableHttp("https://listener-au.logz.io:8071/?type=app&token=hhXkmkucBmcNroDVSsfTYcOkmDdhLSPE",
                             logzioTextFormatterOptions: new LogzioTextFormatterOptions
                             {
                                 BoostProperties = true,
